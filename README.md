@@ -39,15 +39,17 @@ The patients' phenotypes are not evenly distributed, some are
 
 ## Current Progress
 ### 7/29/2019 update
-A logistic regression model was built using randomly-selected half SNVs to predict pathogenicity risk. The outcome is based on ACMG standard, likely pathogenic/pathogenic are marked as positive, the rest are marked as negative. A random down-sampling method applied, missing values are filled by feature means. Overall accuracy is around 74%, overall sensitivity is 84%, overall AUC is 0.80.
+A logistic regression model was built using randomly-selected half SNVs to predict pathogenicity risk. The outcome is based on ACMG standard, likely pathogenic/pathogenic are marked as positive, the rest are marked as negative. A random down-sampling method applied, missing values are filled by feature means. On test set, overall accuracy is around 74%, overall sensitivity is 84%, overall AUC is 0.80.
 
 The features used are: 
 > "SIFT", "polyphen2", "REVEL", "M-CAP", "count", "pheno_score", "C_NaN", "C_association", "C_benign", "C_benign/likely_benign", "C_conflicting_interpretations", "C_likely_benign","C_likely_pathogenic","C_not_provided","C_pathogenic", "C_pathogenic/likely_pathogenic", "C_uncertain_significance", "NaN_ExonicFunc", "frameshift deletion", "frameshift insertion", "frameshift substitution", "nonframeshift deletion", "nonframeshift insertion", "nonframeshift substitution", "nonsynonymous SNV", "stopgain","stoploss","synonymous SNV", "unknown", "DFP", "DM", "DM?", "DP", "FP", "NaN_HGMD" and “R”. The features after “pheno_score” are all dummy variables transformed from “Clinvar”, “ExonicFuc_refGene” and “HGMD”. 
 
-Then another logistic regression model was built using the other half SNVs to predict final result (user selection). The outcome is based on previous user’s choice, annotated results/confirmed are marked as positive, the rest are marked as negative.  A random down-sampling method applied, missing values are filled by feature means. Overall accuracy is around 79.1%, overall sensitivity is 85.5%, overall AUC is 0.86.
+Then another logistic regression model was built using the other half SNVs to predict final result (user selection). The outcome is based on previous user’s choice, annotated results/confirmed are marked as positive, the rest are marked as negative.  A random down-sampling method applied, missing values are filled by feature means. On test set, overall accuracy is around 79.1%, overall sensitivity is 85.5%, overall AUC is 0.86.
+
+After this 
 
 ### Future Work Thoughts
-1. Try random forest model with no filling missing values.  
+1. Try other mahcine learning model like random forest with no filling missing values.  
 2. Try different weights/down-sampling combinations.  
 3. More features/annotations should have been added into the analysis if possible.  
 4. Final goal is to identify potential pathogenic SNVs that has no annotated before.
