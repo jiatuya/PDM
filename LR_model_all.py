@@ -229,5 +229,3 @@ def LR_model_all(filedir):
 # print(p_or_not_tn, p_or_not_fp, p_or_not_fn, p_or_not_tp,p_or_not_sensitivity, p_or_not_specificity, c_or_not_tn, c_or_not_fp, c_or_not_fn, c_or_not_tp,c_or_not_sensitivity, c_or_not_specificity)
 
 
-temp = LR_model_all("new_sample_7_26/all/20190725294310_allsites.csv")
-print(temp)
