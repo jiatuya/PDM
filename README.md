@@ -71,35 +71,35 @@ This model then used on 423 new data (not the test set), sensitivity and specifi
 |  HGVS |  HGVS annotation for the SNV  |PRAMEF2:NM_023014:exon4:c.923A>G:p.E308G|:heavy_check_mark:|
 | Func.ensGene | type of the SNV location |exonic|    |
 | ExonicFunc_refGene | mutation type|nonsynonymous SNV|  :heavy_check_mark:  |
-| het/hom  |    |||
-| rs ID  |    |||
-| Converge MAF  ||    ||
-| Clinvar  |   | |:heavy_check_mark:|
-| HGMD  |   | |:heavy_check_mark:|
-| ensemblID  | |   ||
-| MAF in ESP6500 | | |   |
-| MAF in 1000g  | |   ||
-| MAF in ExAC_ALL  ||  |  |
-| highest_freq  |   | ||
-|SIFT score | ||:heavy_check_mark:|
-| Polyphen2 score  |    ||:heavy_check_mark:|
-|  MutationTaster_score |    |||
-|  MutationTaster_pred |    |||
-|  Polyphen2 HDIV_pred |    |||
-| SIFT pred  |    |||
-| chrom loc  |   | |:heavy_check_mark:|
-|  heterozygosity ||    ||
-|  pheno_related rate |  |  |:heavy_check_mark:|
-| 0|1 in Converge  |    |||
-| gAD_E_EAS  |    |||
-|  0|0 in Converge | |   ||
-| 1|1 in Converge  |  |  ||
-| ExAC_EAS  |    |||
+| het/hom  |  heterozygous/homozygous  |het||
+| rs ID  |  reference SNP ID number |rs9730080||
+| Converge MAF  ||  0.200846  ||
+| Clinvar  | Clinvar classification  |pathogenic:1 |:heavy_check_mark:|
+| HGMD  | HGMD classification  | DM|:heavy_check_mark:|
+| ensemblID  | Ensembl Genomes ID |  ENSG00000219481 ||
+| MAF in ESP6500 | frequency in ESP-6500 variants|0.0028	 |   |
+| MAF in 1000g  | frequency in 1000 Genomes project|  0.04556 ||
+| MAF in ExAC_ALL  |frequency in the Exome Aggregation Consortium| 0.0198 |  |
+| highest_freq  |  highest freq among above three variables | 0.04556||
+|SIFT score | SIFT prediction score|0.014|:heavy_check_mark:|
+| Polyphen2 score  |  Polyphen2 prediction score  |0.448	|:heavy_check_mark:|
+|  MutationTaster_score |  MutationTaster prediction score  |1||
+|  MutationTaster_pred | MutationTaster classification   |P	||
+|  Polyphen2 HDIV_pred |  Polyphen2 classification  |B||
+| SIFT pred  | SIFT classification   |D||
+| chrom loc  | chromosome # + location  | chrX:50350408	|:heavy_check_mark:|
+|  heterozygosity |heterozygosity |  0.382716  ||
+|  pheno_related rate | how much this SNV related to phenotype | 1.94 |:heavy_check_mark:|
+| 0|1 in Converge  |  population annotation   |359	||
+| gAD_E_EAS  |  population annotation    |0.1205||
+|  0|0 in Converge | population annotation  |  30	 ||
+| 1|1 in Converge  |  population annotation  | 10251	 ||
+| ExAC_EAS  |   population annotation   |0.0012	||
 |  Reference |   PubMed ID |2495303||
-| gnomAD exome_ALL  ||    ||
-|  SplicingPre |  |  |:heavy_check_mark:|
-| disease  |    |||
-|  FinalResult |   | |:heavy_check_mark:|
-| depth  |    |||
-| system_result  ||    |:heavy_check_mark:|
-| user_confirm  | |   |:heavy_check_mark:|
+| gnomAD exome_ALL  |population annotation  |  0.016	  ||
+|  SplicingPre |  splicing prediction|  no |:heavy_check_mark:|
+| disease  | related disease   |SIMPSON-GOLABI-BEHMEL综合征1型；SGBS1|肾母细胞瘤1；WT1||
+|  FinalResult | union set of system result and user confirm |Uncertain significance |:heavy_check_mark:|
+| depth  | sequencing depth   |122||
+| system_result  |suggestion based on ACMG standard|  Pathogenic  |:heavy_check_mark:|
+| user_confirm  |describe if user select this SNV for final result or not, selected = 1, marked = 2, not selected = 0 |  1 |:heavy_check_mark:|
