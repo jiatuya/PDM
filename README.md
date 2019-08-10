@@ -3,9 +3,9 @@
 ## Introduction
 Whole exome sequencing has been used widely in individual patient diagnosis and large-scale research projects since its first clinical diagnosis in 2009. It is a fast, and economical way to find potential pathogenic SNVs in patients' genome compare to Whole Genome Sequencing (WGS), which sequence every single point in patients' genome. The WES only sequences the exon region. In this study, all data are generated using WES.
 
-There are various models out there for SNV pathogenicity prediction/classification, include PolyPhen2, SIFT, M-CAP, SNPs3D, GERP++, REVEL, PhD-SNP, CADD and so on. These models could be classified as 3 types
+There are various models out there for SNV pathogenicity prediction/classification, include PolyPhen2, SIFT, M-CAP, SNPs3D, GERP++, REVEL, PhD-SNP, CADD and so on. These models could be classified as 3 types, 
 
-In spite of various models mentioned above, there is no model tranied and verified specifily for East Asian community. With the raw data collected from hospitals from China, we expect to generate a ensembel model that accurately predict pathogenic SNVs. The purpose of this study is to train a model that could predict and rank nsSNP by pathogenicity and generate a score for each mutation point as reference for clinical decision-making. 
+In spite of various models mentioned above, there is no model tranied and verified specifily for East Asian community. With the raw data collected from hospitals from China, we expect to generate a ensembel model that accurately predict pathogenic SNVs. The purpose of this study is to train a model that could predict SNV pathogenicity and generate a score as reference for clinical decision-making. 
 
 
 
@@ -59,7 +59,7 @@ This model then used on 423 new data (not the test set), sensitivity and specifi
 ## Reference
 
 ## Appendix I 
-| Feature  | Note | Example |Selected in filtered dataset|
+| Feature  | Note | Example (not from a same SNV) |Selected in filtered dataset|
 | ---------- | -----------|-----------|-----------|
 | chrom   |  chromosome number | chr1|| 
 | S/p/M   |  prediction for SIFT, Polyphen2 and M-CAP  |T/B/P| |
