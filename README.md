@@ -98,7 +98,7 @@ This model then used on 423 new data (not the test set), sensitivity and specifi
 |  Reference |   PubMed ID |2495303||
 | gnomAD exome_ALL  |population annotation  |  0.016	  ||
 |  SplicingPre |  splicing prediction|  no |:heavy_check_mark:|
-| disease  | related disease   |SIMPSON-GOLABI-BEHMEL综合征1型；SGBS1|肾母细胞瘤1；WT1||
+| disease  | related disease   |SIMPSON-GOLABI-BEHMEL综合征1型；SGBS1 肾母细胞瘤1；WT1||
 |  FinalResult | union set of system result and user confirm |Uncertain significance |:heavy_check_mark:|
 | depth  | sequencing depth   |122||
 | system_result  |suggestion based on ACMG standard|  Pathogenic  |:heavy_check_mark:|
