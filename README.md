@@ -68,7 +68,7 @@ This model then used on 423 new data (not the test set), sensitivity and specifi
 |  gene |  gene name  | PRAMEF2||
 |REF   |  reference single nucletide | A||
 | ALT  |  alternative single nucletide  |G| |
-|  HGVS |  HGVS annotation for the SNV  |PRAMEF2:NM_023014:exon4:c.923A>G:p.E308G|:heavy_check_mark:|
+|  HGVS |  HGVS annotation for the SNV  |PRAMEF2:NM_023014: exon4:c.923A>G:p.E308G|:heavy_check_mark:|
 | Func.ensGene | type of the SNV location |exonic|    |
 | ExonicFunc_refGene | mutation type|nonsynonymous SNV|  :heavy_check_mark:  |
 | het/hom  |  heterozygous/homozygous  |het||
@@ -90,10 +90,10 @@ This model then used on 423 new data (not the test set), sensitivity and specifi
 | chrom loc  | chromosome # + location  | chrX:50350408	|:heavy_check_mark:|
 |  heterozygosity |heterozygosity |  0.382716  ||
 |  pheno_related rate | how much this SNV related to phenotype | 1.94 |:heavy_check_mark:|
-| 0|1 in Converge  |  population annotation   |359	||
+| 0/1 in Converge  |  population annotation   |359	||
 | gAD_E_EAS  |  population annotation    |0.1205||
-|  0|0 in Converge | population annotation  |  30	 ||
-| 1|1 in Converge  |  population annotation  | 10251	 ||
+|  0/0 in Converge | population annotation  |  30	 ||
+| 1/1 in Converge  |  population annotation  | 10251	 ||
 | ExAC_EAS  |   population annotation   |0.0012	||
 |  Reference |   PubMed ID |2495303||
 | gnomAD exome_ALL  |population annotation  |  0.016	  ||
