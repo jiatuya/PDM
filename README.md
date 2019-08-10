@@ -1,7 +1,7 @@
 # A Pathogenic Single-nucleotide Variant Prediction Model for Asian Genetic Disease Community
 
 ## Introduction
-Whole exome sequencing has been used widely in individual patient diagnosis and large-scale research projects since its first clinical diagnosis in 2009. It is a fast, and economical way to find potential pathogenic SNVs in patients' genome compare to. Unlike Whole Genome Sequencing (WGS), which sequence every single point in patients' genome, WES only sequences the exon region. In this study, all data are generated using WES.
+Whole exome sequencing has been used widely in individual patient diagnosis and large-scale research projects since its first clinical diagnosis in 2009. It is a fast, and economical way to find potential pathogenic SNVs in patients' genome compare to Whole Genome Sequencing (WGS), which sequence every single point in patients' genome. The WES only sequences the exon region. In this study, all data are generated using WES.
 
 There are various models out there for SNV pathogenicity prediction/classification, include PolyPhen2, SIFT, M-CAP, SNPs3D, GERP++, REVEL, PhD-SNP, CADD and so on. These models could be classified as 3 types
 
@@ -18,17 +18,17 @@ After annotation, every variant has following variables, details are in Appendix
 The data are collected by PuYun Medical Company from hospitals in Wuhan, China. The bioinformatic analysis and annotation were performed by a medical assistant decision-making system, powered by OceanCloud Gene Company. All data are unpublished.  
 
 ## Methods
-***Data cleaning***  
-As only about 0.002% points are marked as pathogenic/ likely pathogenic, it is essential to go through a re-sampling approach (thanks to advice from Dr. Blair). In this dataset, as we focus on pathogenic/likely pathogenic points more than the rest, a re-sampling method would apply. 
+***Data Re-sampling***  
+As only about 0.002% SNVs in cleaned dataset are marked as pathogenic/likely pathogenic, it is essential to go through a re-sampling approach (thanks to advice from Dr. Blair). In this dataset, as we focus on pathogenic/likely pathogenic points more than the rest, a re-sampling method would apply. 
 
-***Variable selection***  
-Not all annotations are useful. Non-meaningful variables will be dropped before model training. 
+***Variable Selection***  
+Not all annotations are useful. Non-meaningful variables will be dropped before model training. Categoricial variables were transfered to dummies.
 
-***Machine learning model***  
+***Machine Learning Model***  
 Variant machine learning models are used to find an optimistic one. Models include Regression, SVM, Random Forest, and more. 
 
 ***Verification***  
-New data will be used to verify the existing model. 
+New data will be used to test the performance of existing model. 
 
 ## Limitations and Issues
 The patients' phenotypes are not evenly distributed. Not all phenotype data was avilable, for existing data there were more epilesy patients than others. [phenotype counts](value_counts.txt) This study combined SNVs from all 1404 patients. It is a question that whether this model has a bias to the majority phenotype SNVs even duplicates were removed.  
@@ -59,3 +59,47 @@ This model then used on 423 new data (not the test set), sensitivity and specifi
 ## Reference
 
 ## Appendix I 
+| Feature  | Note | Example |Selected in filtered dataset|
+| ---------- | -----------|-----------|-----------|
+| chrom   |  chromosome number | chr1|| 
+| S/p/M   |  prediction for SIFT, Polyphen2 and M-CAP  |T/B/P| |
+| REVEL/M-CAP  | score for REVEL and M-CAP |0.034/-1.0|:heavy_check_mark: |  
+| loc  |  location on chromosome  |12921132| |
+|  gene |  gene name  | PRAMEF2||
+|REF   |  reference single nucletide | A||
+| ALT  |  alternative single nucletide  |G| |
+|  HGVS |  HGVS annotation for the SNV  |PRAMEF2:NM_023014:exon4:c.923A>G:p.E308G|:heavy_check_mark:|
+| Func.ensGene | type of the SNV location |exonic|    |
+| ExonicFunc_refGene | mutation type|nonsynonymous SNV|  :heavy_check_mark:  |
+| het/hom  |    |||
+| rs ID  |    |||
+| Converge MAF  ||    ||
+| Clinvar  |   | |:heavy_check_mark:|
+| HGMD  |   | |:heavy_check_mark:|
+| ensemblID  | |   ||
+| MAF in ESP6500 | | |   |
+| MAF in 1000g  | |   ||
+| MAF in ExAC_ALL  ||  |  |
+| highest_freq  |   | ||
+|SIFT score | ||:heavy_check_mark:|
+| Polyphen2 score  |    ||:heavy_check_mark:|
+|  MutationTaster_score |    |||
+|  MutationTaster_pred |    |||
+|  Polyphen2 HDIV_pred |    |||
+| SIFT pred  |    |||
+| chrom loc  |   | |:heavy_check_mark:|
+|  heterozygosity ||    ||
+|  pheno_related rate |  |  |:heavy_check_mark:|
+| 0|1 in Converge  |    |||
+| gAD_E_EAS  |    |||
+|  0|0 in Converge | |   ||
+| 1|1 in Converge  |  |  ||
+| ExAC_EAS  |    |||
+|  Reference |   PubMed ID |2495303||
+| gnomAD exome_ALL  ||    ||
+|  SplicingPre |  |  |:heavy_check_mark:|
+| disease  |    |||
+|  FinalResult |   | |:heavy_check_mark:|
+| depth  |    |||
+| system_result  ||    |:heavy_check_mark:|
+| user_confirm  | |   |:heavy_check_mark:|
