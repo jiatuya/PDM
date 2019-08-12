@@ -3,9 +3,9 @@
 ## Introduction
 Whole exome sequencing has been used widely in individual patient diagnosis and large-scale research projects since its first clinical diagnosis in 2009. It is a fast, economical way to find potential pathogenic SNVs in patients' genome compare to Whole Genome Sequencing (WGS), which sequence every single point in patients' genome. The WES only sequences the exon region. In this study, all data are generated using WES.
 
-There are various models out there for SNV pathogenicity prediction/classification, include PolyPhen2, SIFT, M-CAP, SNPs3D, GERP++, REVEL, PhD-SNP, CADD and so on. These models could be classified as ensemble and non-ensemble. The non-ensemble ones uses  
+There are various models out there for SNV pathogenicity prediction/classification, include PolyPhen2, SIFT, M-CAP, SNPs3D, GERP++, REVEL, PhD-SNP, CADD and so on. These models could be classified as ensemble and non-ensemble. The non-ensemble ones use features that discribe the SNV, while the ensemble ones add prediction/scores from other models as well.
 
-In spite of various models mentioned above, there is no model tranied and verified specifily for East Asian community. With the raw data collected from hospitals from China, we expect to generate a ensembel model that accurately predict pathogenic SNVs to support clinicial decision-making. 
+In spite of various models mentioned above, there is no model tranied and verified specifily for East Asian community. With the raw data collected from hospitals from China, we expect to train a ensembel model that accurately predict pathogenic SNVs to support clinicial decision-making. 
 
 
 
@@ -45,7 +45,7 @@ The features used are:
 
 Then another logistic regression model was built using the other half SNVs to predict final result (user selection). The outcome is based on previous user’s choice, annotated results/confirmed are marked as positive, the rest are marked as negative.  **A random down-sampling method applied, missing values are filled by feature means.** On test set, overall accuracy is around 79.1%, overall sensitivity is 85.5%, overall AUC is 0.86. [scalar](c_or_not_lr_scalar.sav) [model](c_or_not_lr_model.sav)
 
-This model then used on 423 new data (not the test set), sensitivity and specifity for each models are collected and shown below.  
+This model then used on 423 new data (not the test set) for verification, sensitivity and specifity for each model are collected and presented below.  
 ![](verify_new_data.png)
 
 ### Future Work Thoughts
