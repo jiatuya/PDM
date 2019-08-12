@@ -1,11 +1,11 @@
 # A Pathogenic Single-nucleotide Variant Prediction Model for Asian Genetic Disease Community
 
 ## Introduction
-Whole exome sequencing has been used widely in individual patient diagnosis and large-scale research projects since its first clinical diagnosis in 2009. It is a fast, and economical way to find potential pathogenic SNVs in patients' genome compare to Whole Genome Sequencing (WGS), which sequence every single point in patients' genome. The WES only sequences the exon region. In this study, all data are generated using WES.
+Whole exome sequencing has been used widely in individual patient diagnosis and large-scale research projects since its first clinical diagnosis in 2009. It is a fast, economical way to find potential pathogenic SNVs in patients' genome compare to Whole Genome Sequencing (WGS), which sequence every single point in patients' genome. The WES only sequences the exon region. In this study, all data are generated using WES.
 
-There are various models out there for SNV pathogenicity prediction/classification, include PolyPhen2, SIFT, M-CAP, SNPs3D, GERP++, REVEL, PhD-SNP, CADD and so on. These models could be classified as 3 types, 
+There are various models out there for SNV pathogenicity prediction/classification, include PolyPhen2, SIFT, M-CAP, SNPs3D, GERP++, REVEL, PhD-SNP, CADD and so on. These models could be classified as ensemble and non-ensemble. The non-ensemble ones uses  
 
-In spite of various models mentioned above, there is no model tranied and verified specifily for East Asian community. With the raw data collected from hospitals from China, we expect to generate a ensembel model that accurately predict pathogenic SNVs. The purpose of this study is to train a model that could predict SNV pathogenicity and generate a score as reference for clinical decision-making. 
+In spite of various models mentioned above, there is no model tranied and verified specifily for East Asian community. With the raw data collected from hospitals from China, we expect to generate a ensembel model that accurately predict pathogenic SNVs to support clinicial decision-making. 
 
 
 
@@ -31,9 +31,9 @@ Variant machine learning models are used to find an optimistic one. Models inclu
 New data will be used to test the performance of existing model. 
 
 ## Limitations and Issues
-The patients' phenotypes are not evenly distributed. Not all phenotype data was avilable, for existing data there were more epilesy patients than others. [phenotype counts](value_counts.txt) This study combined SNVs from all 1404 patients. It is a question that whether this model has a bias to the majority phenotype SNVs even duplicates were removed.  
+The patients' phenotypes are not evenly distributed. Not all phenotype data was avilable, for existing data there were more epilesy patients than others (see [phenotype counts](value_counts.txt)). This study combined SNVs from all 1404 patients, which lead to a question that whether this model had a bias to the majority phenotype SNVs even duplicates were removed.  
 
-So many missing values were in the raw dataset, especially in the columns **"Clinvar"** and **"HGMD"**, which are two databases record SNVs pathogenicity with published evidence. These two features were transfered to dummies.
+So many missing values were in the raw dataset, especially in the columns **"Clinvar"** and **"HGMD"**, which are two databases that record SNVs pathogenicity with published evidence. These two features were transfered to dummies.
 
 
 ## Current Progress
