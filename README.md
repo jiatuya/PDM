@@ -1,4 +1,5 @@
-# logistic regression model to predict SNV risk level and user selection 逻辑回归模型来预测SNV的致病性和用户选择
+# logistic regression model to predict SNV risk level and user selection 
+逻辑回归模型预测SNV的致病性和用户选择
 
 7/26/2019  
 Xinglin (Jason) Jia  
@@ -22,4 +23,3 @@ all procedures are put in one function LR_model_all, input a table, output 6 col
 数据处理流程和调出模型等流程都被做成了一个方程LR_model_all，输入为一张表格，输出六列数值：  
 1st column is chromosome and location, 2nd column is HGVS information, third column p_pred is prediction of pathogenic or not, 4th column p_prob is the probability of the third column, 5th column c_pred is prediction of user select or not, 6th column c_prob is the probability of the sixth column  
 第一列染色体位置，第二列HGVS，第三列p_pred预测是否致病，第四列p_prob为p_pred的概率，第五列c_pred预测用户是否选择，第六列c_prob为c_pred的概率
-
