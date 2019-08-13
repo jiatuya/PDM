@@ -1,7 +1,9 @@
 # A Pathogenic Single-nucleotide Variant Prediction Model for Asian Genetic Disease Community
 
-> Note: This is a detailed Intro to this project. A breif users guide can be found at [users_guide](users_guide.md).
+> Note: This is a detailed Intro to this project. A breif users guide can be found at [users_guide](users_guide.md).  
 
+
+Xinglin (Jason) Jia  :shipit:
 ## Introduction
 Whole exome sequencing has been used widely in individual patient diagnosis and large-scale research projects since its first clinical diagnosis in 2009. It is a fast, economical way to find potential pathogenic SNVs in patients' genome compare to Whole Genome Sequencing (WGS), which sequence every single point in patients' genome. The WES only sequences the exon region. In this study, all data are generated using WES.
 
@@ -14,7 +16,7 @@ In spite of various models mentioned above, there is no model tranied and verifi
 ## Data 
 There are 1402 patients' annotated variants (17,633,323 SNV points in total ) in the database so far, which are used to train and test the model. As time goes by, the model would learn and improve itself as more data kick in.
 
-After annotation, every variant has following variables, details are in Appendix I: 
+After annotation, every variant has following variables, details are in [Appendix I](#appendix-i): 
 > "chrom", " S/p/M", "REVEL/M-CAP", "loc", "gene", "REF", "ALT", "HGVS", "Func.ensGene", "ExonicFunc_refGene", "het/hom", "rs ID", "Converge MAF", "Clinvar", "HGMD", "ensemblID", "MAF in ESP6500", "MAF in 1000g", "MAF in ExAC_ALL", "highest_freq", "SIFT score", "Polyphen2 score", "MutationTaster_score", "MutationTaster_pred", "Polyphen2 HDIV_pred", "SIFT pred", "chrom loc", "heterozygosity", "pheno_related rate", "0|1 in Converge", "gAD_E_EAS", "0|0 in Converge", "1|1 in Converge", "ExAC_EAS", "Reference", "gnomAD exome_ALL", "SplicingPre", "disease", "FinalResult", "depth", "system_result" and "user_confirm". 
 
 The data are collected by PuYun Medical Company from hospitals in Wuhan, China. The bioinformatic analysis and annotation were performed by a medical assistant decision-making system, powered by OceanCloud Gene Company. All data are unpublished.  
@@ -59,6 +61,44 @@ This model then used on 423 new data (not the test set) for verification, sensit
 
 
 ## Reference
+
+Adzhubei, I. A., Schmidt, S., Peshkin, L., Ramensky, V. E., Bork, P., Kondrashov, A. S., & Sunyaev, S. R. (n.d.). PolyPhen supplementary materials. Nature Methods, 7(4).
+
+Adzhubei, I. A., Schmidt, S., Peshkin, L., Ramensky, V. E., Gerasimova, A., Bork, P., … Sunyaev, S. R. (2010). A method and server for predicting damaging missense mutations. Nature Methods, 7(4), 248–249. https://doi.org/10.1038/nmeth0410-248  
+
+Adzhubei, I., Jordan, D. M., & Sunyaev, S. R. (2013). Predicting functional effect of human missense mutations using PolyPhen-2. Current Protocols in Human Genetics. https://doi.org/10.1002/0471142905.hg0720s76  
+
+Capriotti, E., & Fariselli, P. (2017). PhD-SNPg: A webserver and lightweight tool for scoring single nucleotide variants. Nucleic Acids Research, 45(W1), W247–W252. https://doi.org/10.1093/nar/gkx369  
+
+Davydov, E. V., Goode, D. L., Sirota, M., Cooper, G. M., Sidow, A., & Batzoglou, S. (2010). Identifying a high fraction of the human genome to be under selective constraint using GERP++. PLoS Computational Biology, 6(12). https://doi.org/10.1371/journal.pcbi.1001025  
+
+Ding, W. H., Han, L., Xiao, Y. Y., Mo, Y., Yang, J., Wang, X. F., & Jin, M. (2017). Role of Whole-exome Sequencing in Phenotype Classification and Clinical Treatment of Pediatric Restrictive Cardiomyopathy. Chinese Medical Journal, 130(23), 2823–2828. https://doi.org/10.4103/0366-6999.219150  
+
+Dong, C., Wei, P., Jian, X., Gibbs, R., Boerwinkle, E., Wang, K., & Liu, X. (2015). Comparison and integration of deleteriousness prediction methods for nonsynonymous SNVs in whole exome sequencing studies. Human Molecular Genetics, 24(8), 2125–2137. https://doi.org/10.1093/hmg/ddu733  
+
+Jarvik, E. R., Jamal, S. M., Rosenthal, E. A., Cooper, G. M., Kim, D. S., Ranchalis, J., … Taylor, K. D. (2015). Actionable exomic incidental findings in 6503 participants: challenges of variant classification. Genome Research, 25(3), 305–315. https://doi.org/10.1101/gr.183483.114  
+
+Katsonis, P., Koire, A., Wilson, S. J., Hsu, T. K., Lua, R. C., Wilkins, A. D., & Lichtarge, O. (2014). Single nucleotide variations: Biological impact and theoretical interpretation. Protein Science, 23(12), 1650–1666. https://doi.org/10.1002/pro.2552  
+
+Korvigo, I., Afanasyev, A., Romashchenko, N., & Skoblov, M. (2018). Generalising better: Applying deep learning to integrate deleteriousness prediction scores for whole-exome SNV studies. PLoS ONE, 13(3), 1–17. https://doi.org/10.1371/journal.pone.0192829  
+
+Pena, L. D. M., Jiang, Y. H., Schoch, K., Spillmann, R. C., Walley, N., Stong, N., … Robertson, A. K. (2018). Looking beyond the exome: A phenotype-first approach to molecular diagnostic resolution in rare and undiagnosed diseases. Genetics in Medicine, 20(4), 464–469. https://doi.org/10.1038/gim.2017.128  
+
+Ramensky, V., Bork, P., & Sunyaev, S. (2002). Human non-synonymous SNPs: server and survey. Nucleic Acids Research, 30(17), 3894–3900.  
+
+Richards, S., Aziz, N., Bale, S., Bick, D., Das, S., Gastier-Foster, J., … Rehm, H. L. (2015). Standards and guidelines for the interpretation of sequence variants: A joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genetics in Medicine, 17(5), 405–424. https://doi.org/10.1038/gim.2015.30  
+
+Shendure, J. (2014). A general framework for estimating the relative pathogenicity of human genetic variants, 46(3), 310–315. https://doi.org/10.1038/ng.2892.A  
+
+Shihab, H. A., Rogers, M. F., Gough, J., Mort, M., Cooper, D. N., Day, I. N. M., … Campbell, C. (2015). An integrative approach to predicting the functional effects of non-coding and coding sequence variation. Bioinformatics, 31(10), 1536–1543. https://doi.org/10.1093/bioinformatics/btv009  
+
+Sunyaev, S. R., Eisenhaber, F., Rodchenkov, I. V., Eisenhaber, B., Tumanyan, V. G., & Kuznetsov, E. N. (1999). PSIC: profile extraction from sequence alignments with position-specific counts of independent observations. Protein Engineering, Design and Selection, 12(5), 387–394. https://doi.org/10.1093/protein/12.5.387  
+
+Tipping Michael. (2001). Sparse Bayesian Learning and the Relevance Vector Machine. Journal of Machine Learning Research. Retrieved from http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.568.7983&rep=rep1&type=pdf  
+
+Wang, X., Shen, X., Fang, F., Ding, C. H., Zhang, H., Cao, Z. H., & An, D. Y. (2019). Phenotype-driven virtual panel is an effective method to analyze Wes data of neurological disease. Frontiers in Pharmacology, 9(s1), 1–11. https://doi.org/10.3389/fphar.2018.01529  
+
+Yue, P., Melamud, E., & Moult, J. (2006). SNPs3D: Candidate gene and SNP selection for association studies. BMC Bioinformatics, 7, 1–15. https://doi.org/10.1186/1471-2105-7-166  
 
 ## Appendix I 
 | Feature  | Note | Example (not from a same SNV) |Selected in filtered dataset|
