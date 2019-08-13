@@ -1,6 +1,6 @@
 # A Pathogenic Single-nucleotide Variant Prediction Model for Asian Genetic Disease Community
 
-This is a detailed Intro to this project. A breif users guide can be found at [users_guide](users_guide.md).
+> Note: This is a detailed Intro to this project. A breif users guide can be found at [users_guide](users_guide.md).
 
 ## Introduction
 Whole exome sequencing has been used widely in individual patient diagnosis and large-scale research projects since its first clinical diagnosis in 2009. It is a fast, economical way to find potential pathogenic SNVs in patients' genome compare to Whole Genome Sequencing (WGS), which sequence every single point in patients' genome. The WES only sequences the exon region. In this study, all data are generated using WES.
