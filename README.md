@@ -1,9 +1,10 @@
 # A Pathogenic Single-nucleotide Variant Prediction Model for Asian Genetic Disease Community
 
+Xinglin (Jason) Jia  :shipit:
 > Note: This is a detailed Intro to this project. A brief users guide can be found at [users_guide](users_guide.md).  
 
 
-Xinglin (Jason) Jia  :shipit:
+
 ## Introduction
 In a human genome, there are about 180,000 exons, constituting about 1% of the whole human genome. Following the central dogma, exons are transcribed to mRNA, then translated to the protein that directly associated with phenotype expression. It is believed that non-silence mutations, especially the non-synonymous Single Nucleotide Variants (nsSNV) on exons might lead to various Mendelian and common polygenic diseases including cancer. It is essential to identify and understand the genetic variants that alter protein sequences. Whole Exome Sequencing (WES) is a technique that sequences the exon region in a genome. It firstly only selects exon regions, then sequence using next-generation high-throughput sequencing technology. WES is faster and more economical compared to Whole Genome Sequencing (WGS) which sequences every single nucleotide in the patients' genome, and it overcomes the limitation of designed microarray chips. It has been widely used in individual patient diagnosis and large-scale research projects since its first clinical diagnosis in 2009. 
 
