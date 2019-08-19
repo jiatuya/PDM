@@ -38,13 +38,13 @@ Xinglin (Jason) Jia  :shipit:
 ## 数据 Data
 ### 训练数据 Data for training & testing
 总共有1402例病人的样本（17,633,323 个 SNV）用来训练和验证模型。  
-There are 1402 patients' annotated variants (17,633,323 SNV points in total ) in the database so far, which are used to train and test the model.
+There are 1402 patients' annotated variants (17,633,323 SNV points in total ) in the database so far, which are used to train and test the model.  
 标记过后，每个位点都有以下的所有特征：  
 After annotation, every variant has following variables, details are in [Appendix I](#appendix-i): 
 > "chrom", " S/p/M", "REVEL/M-CAP", "loc", "gene", "REF", "ALT", "HGVS", "Func.ensGene", "ExonicFunc_refGene", "het/hom", "rs ID", "Converge MAF", "Clinvar", "HGMD", "ensemblID", "MAF in ESP6500", "MAF in 1000g", "MAF in ExAC_ALL", "highest_freq", "SIFT score", "Polyphen2 score", "MutationTaster_score", "MutationTaster_pred", "Polyphen2 HDIV_pred", "SIFT pred", "chrom loc", "heterozygosity", "pheno_related rate", "0|1 in Converge", "gAD_E_EAS", "0|0 in Converge", "1|1 in Converge", "ExAC_EAS", "Reference", "gnomAD exome_ALL", "SplicingPre", "disease", "FinalResult", "depth", "system_result" and "user_confirm". 
 
 ### 验证数据 Data for verification
-总共有423例新的病人样本用来验证模型。
+总共有423例新的病人样本用来验证模型。  
 There are 423 patients' annotated variants used to verify the model.
 
 ### 表型数据 Phenotype data
