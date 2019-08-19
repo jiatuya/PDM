@@ -21,47 +21,36 @@ Xinglin (Jason) Jia  :shipit:
 #### 从nsSNP预测表型
 思考：对胚胎筛查有用？患者是已经有phenotype再去检测，也许对病情发展预测有用？
 #### De novo在现有遗传病里的分类
-
+***
 ### 第二次讨论
 #### 糖尿病分型
 #### 地中海
 #### 单一样本中8000个位点排序
 1. 也许可以通过通路筛选
 1. 在一些单基因病中精度会很高，比如耳聋
-
+***
 ### 第三次讨论
 #### 单一样本中位点排序
 1. 首先基于ACMG标准（系统结论）预测该位点是否致病，并输出概率
 1. 其次使用上一模型的结果，基于用户是否选择预测该位点是否会被用户选择/标记，并输出概率
+***
 
-
-## Data 
-There are 1402 patients' annotated variants (17,633,323 SNV points in total ) in the database so far, which are used to train and test the model. As time goes by, the model would learn and improve itself as more data kick in.
-
+## 数据 Data
+### 训练数据 Data for training & testing
+总共有1402例病人的样本（17,633,323 个 SNV）用来训练和验证模型。  
+There are 1402 patients' annotated variants (17,633,323 SNV points in total ) in the database so far, which are used to train and test the model.
+标记过后，每个位点都有以下的所有特征：  
 After annotation, every variant has following variables, details are in [Appendix I](#appendix-i): 
 > "chrom", " S/p/M", "REVEL/M-CAP", "loc", "gene", "REF", "ALT", "HGVS", "Func.ensGene", "ExonicFunc_refGene", "het/hom", "rs ID", "Converge MAF", "Clinvar", "HGMD", "ensemblID", "MAF in ESP6500", "MAF in 1000g", "MAF in ExAC_ALL", "highest_freq", "SIFT score", "Polyphen2 score", "MutationTaster_score", "MutationTaster_pred", "Polyphen2 HDIV_pred", "SIFT pred", "chrom loc", "heterozygosity", "pheno_related rate", "0|1 in Converge", "gAD_E_EAS", "0|0 in Converge", "1|1 in Converge", "ExAC_EAS", "Reference", "gnomAD exome_ALL", "SplicingPre", "disease", "FinalResult", "depth", "system_result" and "user_confirm". 
 
-The data are collected by PuYun Medical Company from hospitals in Wuhan, China. The bioinformatic analysis and annotation were performed by a medical assistant decision-making system, powered by OceanCloud Gene Company. All data are unpublished.  
+### 验证数据 Data for verification
+总共有423例新的病人样本用来验证模型。
+There are 423 patients' annotated variants used to verify the model.
 
-## Methods
-***Data Re-sampling***  
-As only about 0.002% SNVs in the cleaned dataset is marked as pathogenic/likely pathogenic, it is essential to go through a re-sampling approach (thanks to advice from Dr. Blair). In this dataset, as we focus on pathogenic/likely pathogenic points more than the rest, a re-sampling method would apply.
+### 表型数据 Phenotype data
+[phenotype counts](value_counts.txt)
 
-***Variable Selection***  
-Not all annotations are useful. Non-meaningful variables will be dropped before model training. Categorical variables were transferred to dummies.
-
-***Machine Learning Model***  
-Variant machine learning models are used to find an optimistic one. Models include Regression, SVM, Random Forest, and more. 
-
-***Verification***  
-New data will be used to test the performance of the existing model. 
-
-## Limitations and Issues
-The patients' phenotypes are not evenly distributed. Not all phenotype data were available, for existing data there were more epilepsy patients than others (see [phenotype counts](value_counts.txt)). This study combined SNVs from all 1404 patients, which lead to a question that whether this model had a bias to the majority phenotype SNVs even duplicates were removed.  
-
-So many missing values were in the raw dataset, especially in the columns **"Clinvar"** and **"HGMD"**, which are two databases that record SNVs pathogenicity with published evidence. These two features were transferred to dummies.
-
-## Current Progress
+## 现在的进展 Current Progress
 ### 7/29/2019 update [python script](LR_model_all.py)
 A logistic regression model was built using randomly-selected half SNVs to predict pathogenicity risk. The outcome is based on ACMG standard, likely pathogenic/pathogenic are marked as positive, the rest are marked as negative. **A random down-sampling method applied, missing values are filled by feature means.** On the test set, overall accuracy is around 74%, overall sensitivity is 84%, overall AUC is 0.80. [scalar](p_or_not_lr_scalar.sav) [model](p_or_not_lr_model.sav)
 
@@ -74,11 +63,11 @@ This model then used on 423 new data (not the test set) for verification, sensit
 ![](verify_new_data.png)
 
 
-### Future Work Thoughts
-1. Try other machine learning models like a random forest with no filling missing values.  
-2. Try different weights/down-sampling combinations.  
-3. More features/annotations should have been added into the analysis if possible.  
-4. The final goal is to identify potential pathogenic SNVs that has no annotated before.
+## 未来工作的想法 Future Work Thoughts  
+1. 尝试其他机器学习模型，如使用随机森林处理不填充缺失值的数据。Try other machine learning models like a random forest with no filling missing values.  
+2. 尝试不同的权重/下取样方法的组合。Try different weights/down-sampling combinations.  
+3. 如果可能的话更多的特征/注释应该放在分析里。More features/annotations should have been added into the analysis if possible.  
+4. 最终目的应该是辨认之前没有注释过的SNV。The final goal is to identify potential pathogenic SNVs that has no annotated before.
 
 ## Reference
 
