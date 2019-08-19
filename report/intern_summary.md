@@ -48,7 +48,7 @@ After annotation, every variant has following variables, details are in [Appendi
 There are 423 patients' annotated variants used to verify the model.
 
 ### 表型数据 Phenotype data
-[phenotype counts](value_counts.txt)
+[phenotype counts](./value_counts.txt)
 
 ## 现在的进展 Current Progress
 ### 7/29/2019 update [python script](LR_model_all.py)
